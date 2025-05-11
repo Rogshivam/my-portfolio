@@ -9,7 +9,7 @@ const Home = () => {
           <div className="text-center">
             <div className="mb-8">
               <img
-                src="/photo.jpg"
+                src="https://res.cloudinary.com/dn0bmsj49/image/upload/v1743257043/nqiy13em0letehosvhes.png"
                 alt="Profile"
                 className="mx-auto h-48 w-48 sm:h-64 sm:w-64 rounded-full object-cover shadow-lg border-4 border-white dark:border-gray-800"
               />
