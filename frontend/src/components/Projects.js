@@ -29,7 +29,7 @@ const Projects = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a 
-                  href="youtube-frontend-d3ou.onrender.com/" 
+                  href="https://youtube-frontend-d3ou.onrender.com/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex-1 text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200"
@@ -98,11 +98,11 @@ const Projects = () => {
             </div>
             <div className="p-4 sm:p-6">
               <h3 className="text-xl sm:text-2xl font-bold mb-2 text-gray-800 dark:text-white">
-                Spotify Clone
+                Blog Website
               </h3>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
-                A full-stack spotify clone with modern web interface for entertainment  news and podcast releases
-                Built with React and Node.js.
+                A full-stack Blog website having modern web interface with user authentication and mongodb integration.
+                Built with MERN stack.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a 
@@ -128,7 +128,7 @@ const Projects = () => {
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-[1.02]">
             <div className="relative">
               <img
-                src="https://res.cloudinary.com/dn0bmsj49/image/upload/v1746998202/o6k37esd4jkbvk0kssz4.png"
+                src="https://res.cloudinary.com/dn0bmsj49/image/upload/v1747030554/brle6nvp1qkgyfatkabh.png"
                 alt="Project 4"
                 className="w-full h-48 sm:h-56 object-cover"
               />
@@ -136,11 +136,47 @@ const Projects = () => {
             </div>
             <div className="p-4 sm:p-6">
               <h3 className="text-xl sm:text-2xl font-bold mb-2 text-gray-800 dark:text-white">
-                Spotify Clone
+                Wheather 
               </h3>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
-                A full-stack spotify clone with modern web interface for entertainment  news and podcast releases
-                Built with React and Node.js.
+                It is a simple weather application. It allows users to search for weather information by city or grant location access to get local weather updates..
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a 
+                  href="https://weather-analyzer-five.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-1 text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200"
+                >
+                  View Demo
+                </a>
+                <a 
+                  href="https://github.com/Rogshivam/weather-analyzer.git" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-1 text-center bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition-colors duration-200"
+                >
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+          {/* Project 5 */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-[1.02]">
+            <div className="relative">
+              <img
+                src="https://res.cloudinary.com/dn0bmsj49/image/upload/v1746998202/o6k37esd4jkbvk0kssz4.png"
+                alt="Project 5"
+                className="w-full h-48 sm:h-56 object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-20 hover:bg-opacity-30 transition-opacity duration-300"></div>
+            </div>
+            <div className="p-4 sm:p-6">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2 text-gray-800 dark:text-white">
+                Taskmanager
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
+                A backend only taskmanager with modern web interface for interactive UI with easy to use Built with Expree and Node.js.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a 
@@ -162,6 +198,7 @@ const Projects = () => {
               </div>
             </div>
           </div>
+          
           
         </div>
       </div>
