@@ -6,12 +6,12 @@ const contactRoutes = require('./routes/contact');
 
 const app = express();
 
-// CORS Configuration - Update with your frontend URL in production
+// CORS Configuration - Allow requests from Vercel domain
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.com', 'https://www.your-frontend-domain.com']
-    : 'http://localhost:3000',
-  optionsSuccessStatus: 200
+  origin: ['https://my-portfolio-six-topaz-87.vercel.app', 'http://localhost:3000'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
 };
 
 // Middleware
