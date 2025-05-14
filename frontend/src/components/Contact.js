@@ -7,6 +7,7 @@ const Contact = () => {
     message: ''
   });
   const [status, setStatus] = useState('');
+  const [useProxy, setUseProxy] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +15,12 @@ const Contact = () => {
 
     try {
       const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-      const response = await fetch(`${API_URL}/api/contact`, {
+      // Use CORS proxy as a last resort if direct connection fails
+      const fetchURL = useProxy 
+        ? `https://cors-anywhere.herokuapp.com/${API_URL}/api/contact`
+        : `${API_URL}/api/contact`;
+        
+      const response = await fetch(fetchURL, {
         method: 'POST',
         mode: 'cors',
         credentials: 'include',
@@ -29,10 +35,22 @@ const Contact = () => {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
       } else {
+        // If first attempt fails without proxy, try with proxy
+        if (!useProxy && response.status === 0) {
+          setUseProxy(true);
+          // Retry with proxy
+          return handleSubmit(e);
+        }
         setStatus('error');
       }
     } catch (error) {
       console.error('Contact form error:', error);
+      // If error occurs and not using proxy yet, try with proxy
+      if (!useProxy) {
+        setUseProxy(true);
+        // Retry with proxy
+        return handleSubmit(e);
+      }
       setStatus('error');
     }
   };
