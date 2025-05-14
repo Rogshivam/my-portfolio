@@ -6,8 +6,16 @@ const contactRoutes = require('./routes/contact');
 
 const app = express();
 
+// CORS Configuration - Update with your frontend URL in production
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://your-frontend-domain.com', 'https://www.your-frontend-domain.com']
+    : 'http://localhost:3000',
+  optionsSuccessStatus: 200
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // MongoDB Connection
