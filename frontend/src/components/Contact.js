@@ -16,8 +16,11 @@ const Contact = () => {
       const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
       const response = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
         },
         body: JSON.stringify(formData),
       });
@@ -29,6 +32,7 @@ const Contact = () => {
         setStatus('error');
       }
     } catch (error) {
+      console.error('Contact form error:', error);
       setStatus('error');
     }
   };
