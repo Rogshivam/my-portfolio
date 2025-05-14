@@ -7,26 +7,17 @@ const Contact = () => {
     message: ''
   });
   const [status, setStatus] = useState('');
-  const [useProxy, setUseProxy] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
 
     try {
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-      // Use CORS proxy as a last resort if direct connection fails
-      const fetchURL = useProxy 
-        ? `https://cors-anywhere.herokuapp.com/${API_URL}/api/contact`
-        : `${API_URL}/api/contact`;
-        
-      const response = await fetch(fetchURL, {
+      // Use the production URL directly
+      const response = await fetch('https://my-portfolio-1-n5fd.onrender.com/api/contact', {
         method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
-          // Do not set Access-Control-Allow-Origin here - it causes preflight issues
         },
         body: JSON.stringify(formData),
       });
@@ -35,22 +26,11 @@ const Contact = () => {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        // If first attempt fails without proxy, try with proxy
-        if (!useProxy && response.status === 0) {
-          setUseProxy(true);
-          // Retry with proxy
-          return handleSubmit(e);
-        }
+        console.error('Server returned error:', await response.text());
         setStatus('error');
       }
     } catch (error) {
       console.error('Contact form error:', error);
-      // If error occurs and not using proxy yet, try with proxy
-      if (!useProxy) {
-        setUseProxy(true);
-        // Retry with proxy
-        return handleSubmit(e);
-      }
       setStatus('error');
     }
   };
