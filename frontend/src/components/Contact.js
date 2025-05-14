@@ -26,7 +26,7 @@ const Contact = () => {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
+          // Do not set Access-Control-Allow-Origin here - it causes preflight issues
         },
         body: JSON.stringify(formData),
       });
