@@ -20,7 +20,7 @@ const About = () => {
 
             <div className="mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Location</h3>
-              <p className="text-gray-600 dark:text-gray-300">Haryana,INDIA</p>
+              <p className="text-gray-600 dark:text-gray-300">HARAYANA,INDIA</p>
             </div>
 
             <div className="mb-8">
