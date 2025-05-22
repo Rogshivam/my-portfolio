@@ -80,7 +80,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     className="text-sm sm:text-base text-gray-600 dark:text-gray-300"
                   >
-                    https://www.linkedin.com/in/shivam-kumar-5b112b316
+                    www.linkedin.com/in/shivam-kumar-5b112b316
                   </a>
                 </div>
               </div>
