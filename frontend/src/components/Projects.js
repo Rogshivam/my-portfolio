@@ -254,7 +254,7 @@ const Projects = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a 
-                  href="https://racing-game-rose.vercel.app/https://github.com/Rogshivam/Racing-game.git" 
+                  href="https://racing-game-rose.vercel.app/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex-1 text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200"
