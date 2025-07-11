@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 pt-20">
-      <div className="container mx-auto px-4 py-8 sm:py-16">
+      <div className="container mx-auto px-4 py-8 sm:py-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
             <div className="mb-8">
@@ -19,8 +19,7 @@ const Home = () => {
               <span className="block text-indigo-600 dark:text-indigo-400 mt-2">Full Stack Developer</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 px-4">
-              I build modern web applications using React, Node.js, and MongoDB.
-              Passionate about creating beautiful and functional user experiences.
+              I build modern web applications using the latest frameworks and tools. I'm passionate about crafting clean, intuitive, and responsive user experiences that seamlessly combine performance with elegant design.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
               <Link

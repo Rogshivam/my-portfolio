@@ -3,8 +3,8 @@ import React from 'react';
 const About = () => {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">About Me</h2>
+      <div className="container mx-auto px-1">
+        <h2 className="text-3xl font-bold text-center mb-6 mt-5 text-gray-800 dark:text-white">About Me</h2>
         
         <div className="max-w-3xl mx-auto">
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
@@ -26,7 +26,7 @@ const About = () => {
             <div className="mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Skills</h3>
               <div className="flex flex-wrap gap-2">
-                {['React', 'JavaScript', 'Node.js', 'MongoDB', 'HTML', 'CSS', 'Tailwind CSS','C','C++','Python','Linux','PHP'].map((skill) => (
+                {['React', 'JavaScript', 'Node.js', 'MongoDB', 'HTML', 'CSS', 'Tailwind CSS','C','C++','Python','Linux','PHP','Nextjs','Mysql','prisma','Postman','PostgreSQL','DevOps','Docker','Kubernetes','Jenkins','CI/CD'].map((skill) => (
                   <span
                     key={skill}
                     className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-full text-sm"
