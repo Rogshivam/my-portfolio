@@ -47,7 +47,7 @@ const Projects = () => {
               </div>
             </div>
           </div>
-          {/* Project 1 */}
+          {/* Project 2 */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-[1.02]">
             <div className="relative">
               <img
@@ -59,11 +59,10 @@ const Projects = () => {
             </div>
             <div className="p-4 sm:p-6">
               <h3 className="text-xl sm:text-2xl font-bold mb-2 text-gray-800 dark:text-white">
-                Youtube Clone
+                NETHOST
               </h3>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
-              A full-stack youtube clone with user authentication and mongodb integration.
-              Built with MERN stack.
+              A full-stack web application designed for hosting and managing user-generated posts with authentication features.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a 
@@ -316,8 +315,45 @@ const Projects = () => {
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-[1.02]">
             <div className="relative">
               <img
-                src="https://res.cloudinary.com/dn0bmsj49/image/upload/v1747993550/c1g4qjhnwwgxzk6k7yjs.png"
+                src="https://res.cloudinary.com/dn0bmsj49/image/upload/v1747993551/yskiqllqkzj9bz5z4ufq.png"
                 alt="Project 9"
+                className="w-full h-48 sm:h-56 object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-20 hover:bg-opacity-30 transition-opacity duration-300"></div>
+            </div>
+            <div className="p-4 sm:p-6">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2 text-gray-800 dark:text-white">
+                Razorpay UI Clone
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
+                This is a simple and interactive to-do list web application. It allows users to add tasks, helping them stay organized and track their activities. The application is built using HTML, CSS, and JavaScript.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a 
+                  href="https://razor-pay-repo.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-1 text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200"
+                >
+                  View Demo
+                </a>
+                <a 
+                  href="https://github.com/Rogshivam/razor_pay-repo.git" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-1 text-center bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition-colors duration-200"
+                >
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+          {/* Project 10 */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-[1.02]">
+            <div className="relative">
+              <img
+                src="https://res.cloudinary.com/dn0bmsj49/image/upload/v1747993550/c1g4qjhnwwgxzk6k7yjs.png"
+                alt="Project 10"
                 className="w-full h-48 sm:h-56 object-cover"
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 hover:bg-opacity-30 transition-opacity duration-300"></div>
@@ -349,6 +385,7 @@ const Projects = () => {
               </div>
             </div>
           </div>
+          
           
           
         </div>
