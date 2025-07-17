@@ -6,36 +6,31 @@ const contactRoutes = require('./routes/contact');
 
 const app = express();
 
-const allowedOrigins = [process.env.CLIENT_ORIGIN_1,process.env.CLIENT_ORIGIN_2, 'http://localhost:3000'];
+// Define allowed origins
+const allowedOrigins = [
+  process.env.CLIENT_ORIGIN_1,
+  process.env.CLIENT_ORIGIN_2,
+  'http://localhost:3000'
+];
 
 // CORS Configuration
 const corsOptions = {
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
-  preflightContinue: false,
   optionsSuccessStatus: 204
 };
 
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
-
-// Handle OPTIONS requests explicitly to ensure proper CORS headers
-app.options('*', (req, res) => {
-  res.status(204).end();
-});
-
-// Additional CORS headers for maximum compatibility
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://my-portfolio-six-topaz-87.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin');
-  res.header('Access-Control-Allow-Credentials', true);
-  
-  next();
-});
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI, {
@@ -48,7 +43,8 @@ mongoose.connect(process.env.MONGODB_URI, {
 // Routes
 app.use('/api/contact', contactRoutes);
 
+// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-}); 
+});
