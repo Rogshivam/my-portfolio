@@ -11,10 +11,10 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-
     try {
       // Use the production URL directly
-      const response = await fetch('https://my-portfolio-1-n5fd.onrender.com/api/contact', {
+      
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,13 +34,12 @@ const Contact = () => {
       setStatus('error');
     }
   };
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.id]: e.target.value
     });
-  };
+  }
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 pt-20 pb-16">

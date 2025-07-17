@@ -6,9 +6,11 @@ const contactRoutes = require('./routes/contact');
 
 const app = express();
 
-// CORS Configuration - Allow requests from Vercel domain with proper preflight handling
+const allowedOrigins = [process.env.CLIENT_ORIGIN_1,process.env.CLIENT_ORIGIN_2, 'http://localhost:3000'];
+
+// CORS Configuration
 const corsOptions = {
-  origin: ['https://my-portfolio-six-topaz-87.vercel.app', 'http://localhost:3000'],
+  origin: allowedOrigins,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
